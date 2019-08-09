@@ -1,0 +1,97 @@
+{% extends 'base-nav.html' %} {% load staticfiles %} {% block base %}
+<section class="section_padding_top_100 section_padding_bottom_100 height-100">
+    <div class='head-contents'>
+        <div class="container">
+            <div class='row'>
+                <!--회원 정보 시작-->
+                <div class="col-md-3">
+                    <div class='profile'>
+                        {% if user.is_authenticated %}
+                        <img src="{% static 'jobcomment/img/user.png'%}" alt="오류" class="img-circle"> <br>
+                        {{user.username}} 님 <br>
+                        <a class="info" href="{% url 'login' %}">내 정보</a>
+                        <a class="info" href="{% url 'logout' %}">로그아웃</a>
+                        {% else %}
+                        <img src="{% static 'jobcomment/img/user.png'%}" alt="오류" class="img-circle"> <br>
+                        
+                        <img src="" alt="" class="img-circle"> <br>
+                        <br>
+                        <a class="info" href="{% url 'login' %}">로그인</a>
+                        <a class="info" href="{% url 'signup' %}">회원가입</a>
+                        {% endif %} 
+                    </div>
+                </div>
+                <!--회원 정보 종료-->
+
+                <!--검색창 시작-->
+                <div class=" col-md-9">
+                    <div class="search-input">
+                        <input type="text" class="search" value="검색">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!--검색창 종료-->
+            </div>
+            <!--row-->
+        </div>
+        <!--container-->
+    </div>
+
+        <div class="container top-250">
+            <div class='row'>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <a href="{% url 'home' %}" class='clickbox'>
+                            <img class="image1" src="{% static 'jobcomment/img/home.png'%}">
+                            <span class="menu_text">홈</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'politics' %}" class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/politics.png'%}">
+                            <span class="menu_text"> 정치</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'social' %}" class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/social.png'%}">
+                            <span class="menu_text">사회</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'economy' %}" class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/economy.png'%}">
+                            <span class="menu_text">경제</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'it' %}" class='clickbox'>
+                            <img class="image1" src="{% static 'jobcomment/img/it.png'%}">
+                            <span class="menu_text">IT</span>
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'science' %}" class='clickbox'>
+                            <img class="image" src="{% static 'jobcomment/img/science.png'%}">
+                            <span class="menu_text">과학</span>
+                        </a>
+                    </div>
+                </div>
+                <!--콘텐츠 시작-->
+                <div class='col-md-9'>
+                    <div class="content-detail">
+                        <div class='content row'>
+                            <div class='row'>
+                                {% block contents %}
+
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>
+
+{% endblock %}

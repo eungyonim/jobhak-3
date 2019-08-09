@@ -1,0 +1,68 @@
+
+/* 콘텐츠 */
+.content {
+    margin-top: 35px;
+}
+
+.content .content_title {
+    font-size: 23px;
+    color: #527094;
+}
+
+.content .content_date {
+    font-size: 11px;
+    color: #527094;
+}
+
+.content .img {
+    margin: 50px;
+}
+
+.content_body {
+    border-radius: 10px;
+    border: solid 1px #527094;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.body_point {
+    color: #527094;
+    background-color: white;
+    position: relative;
+    bottom: 12px;
+}
+
+.body_text{
+    color: #959595;
+}
+
+.content_rink{
+    font-size: 12px;
+    text-decoration: none;
+    color: #6691e4;
+    margin-bottom: 50px;
+}
+
+
+/* 의견 */
+
+.write_textarea{
+    width: 70%;
+    height: 80px;
+    border: solid 1px #d5e1f9;
+    border-radius: 10px;
+}
+
+.write_button{
+    background-color: #918ed1;
+    border: solid 1px #918ed1;
+    border-radius: 7px;
+    color: white;
+    padding: 4px;
+    width: 75px;
+}
+
+.checkagree, .checkdisagree {
+    border: soild #a98ec3;
+}

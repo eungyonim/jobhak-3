@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block contents %}
+    {% for blog in posts %}
+        <div class="col-md-6">
+            <a href="{% url 'detail' blog.id %}">
+            <div class='main-content' style="background-image: url( {{ blog.image.url }} ); background-size: cover;">
+                <div class= 'media-content'>
+                </div>
+                <div style="    padding-top: 10px;
+                                                                    display: inline;
+                position: sticky;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;">
+                    <h2 style="    font-weight: 800;
+                    color: white;
+                    position: relative;
+                    top: 20px;
+
+                    text-shadow: 1px 1px 3px black;">{{ blog.title }}</h2>
+                </div>
+            </div>
+            </a>
+        </div> 
+
+        <!-- <div class="col-md-6" style="background-image: url( {{ blog.image.url }} )">
+            <div class='card shadow-sm'>
+                <span class="card-body">
+                    <p class="card-text">제목:{{ blog.title }}</p>
+                    <p class="card-text">내용:{{ blog.summary }}</p>
+                    <span class="d-flex justify-content-between align-items-center">
+                        <span class="btn-group">
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'detail' blog.id %}">View</a>
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </div> -->
+    {% endfor %}
+
+{% endblock %}

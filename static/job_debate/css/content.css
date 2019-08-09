@@ -1,0 +1,34 @@
+.content {
+    margin-top: 35px;
+    height: 170px;
+    position: relative;
+    background-image: url(https://i.ytimg.com/vi/3UzKKfqI5dQ/maxresdefault.jpg);
+    background-size: cover;
+}
+
+.img_cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);                                                                 
+    z-index:1;
+}
+
+.content .content_text {
+    position: absolute;
+         top:70%;
+         left:50%;
+         transform: translate(-50%, -50%);                                                                  
+         color: white;
+         z-index: 2;
+         text-align: center;
+}
+
+.content_text .content_title {
+    font-size:23px;
+    text-decoration: none;
+}
+
+.content_text .content_date {
+    font-size:13px;
+}

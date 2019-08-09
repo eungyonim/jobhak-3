@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% load staticfiles %}  {% block contents %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>잡학다식</title>
+
+
+    
+    <!-- jobhakdasik debate css -->
+
+    <link rel="stylesheet" href="{% static 'job_debate/css/content_detail.css' %}">
+</head>
+<body>
+
+
+            <!--콘텐츠 시작-->
+
+                    <div class="content">
+                        <p class="content_title">{{ debate.title }}</p>
+                        <p class="content_date">{{ debate.pub_date }}</p>
+
+                        <img src="{{ debate.image.url }}">
+                        <div class="content_body">
+                            <span class="body_point"> KEYPOINT </span>
+                            <p class="body_text"> 
+                                무엇이 더 저렴한가? <br> 사람들이 좋아하는 맛은?<br>                                {{ debate.body }}</p>
+                        </div>
+                        <a href="" class="content_rink">자세히 알아보기 &blacktriangleright; </a>
+                        <p>그래프구현필요</p>
+                        <hr class="line">
+
+
+                    <!-- 의견쓰기 -->
+                    <div class="write_op">
+                        <div class="comment_profile">
+                            <img src="">
+                            <p>username</p>
+                            </div>
+                        {% block content %}
+                        <form method="POST" >{% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                        <textarea class="write_textarea"></textarea>
+                        <br>
+                        <button type="submit" class="write_button">의견제출</button>
+                        <input type="checkbox" id="check_agree">
+                        <label for="check_agree"><span class="checkbox_text">찬성</span></label> 
+                        <input type="checkbox" id="check_disagree">
+                        <label for="check_disagree"><span class="chechbox_text">반대</span></
+                     </form>
+                    </div>
+
+                    <hr class="line">
+                    </div>
+        
+                   <div class="comment">
+                       <div class="comment_profile">
+                            <img src="">
+                            <p>username</p>
+                       </div>
+                         
+                        <p class="comment_text"> 이곳은 의견을 적는 곳 이곳은 의견을 적는 곳</p>
+                        <div>
+                            <a href="" class="small_button">반론하기</a>
+                            <a href="" class="small_button">좋아요</a>
+                            <a href="" class="small_button">싫어요</a></div>
+                        <!-- {% for comment in blog.comments.all %}
+                        <div class="comment">
+                                <div class="date">{{ comment.created_date }} {{ comment.author }}</div>
+                                <p>{{ comment.text|linebreaks }}</p>
+                            </div>
+                        {% empty %}
+                            <p>아직 댓글이 없습니다</p>
+                        {% endfor %} -->
+                   </div>
+
+                   <div class="comment2">
+                        <div class="comment_profile">
+                                <img src="">
+                                <p>username</p>
+                           </div>
+                             
+                            <p class="comment_text"> 이곳은 의견을 적는 곳 이곳은 의견을 적는 곳</p>
+                            <div>
+                                <a href="" class="small_button">반론하기</a>
+                                <a href="" class="small_button">좋아요</a>
+                                <a href="" class="small_button">싫어요</a></div>
+
+                   </div>
+
+
+
+
+                    </div>
+                    <hr>
+
+         
+                </div>
+
+               
+
+
+            {% endblock %}
+
+
+                </div>
+            </div>
+        </div>  
+  
+
+{% endblock %}
+
+</body>
+</html>

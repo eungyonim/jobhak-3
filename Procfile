@@ -1,0 +1,1 @@
+web: gunicorn jobhak.wsgi --log-file -

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load staticfiles %}  {% block contents %}
+{% block head %}
+    <!-- jobhakdasik debate css -->
+
+    <link rel="stylesheet" href="{% static 'job_debate/css/content.css' %}">
+    {% endblock %}
+
+            <!--콘텐츠 시작-->
+                    {% for debate in posts %}
+                    <div class="content">
+                        <div class="content_text">
+                            <a href="{% url 'debate_detail' debate.id %}"> <p class="content_title"> {{ debate.title }} </p> </a>
+                            <p class="content_date"> {{ debate.pub_date }} </p>
+                        </div>
+                            <div class="img_cover">
+                            </div>
+                    </div>
+
+                    {% endfor %}
+
+            <!-- 페이지네이션 -->
+
+                    {% if posts.has_previous %}
+                    <a href="?page=1">처음으로</a>
+                    <a href="?page={{posts.previous_page_number}}">이전</a>
+                    {% endif %}
+
+                    <span>{{ posts.number }}</span>
+                    <span>of</span>
+                    <span>{{ posts.paginator.num_pages }}</span>
+
+                    {% if posts.has_next %}
+                    <a href="?page={{posts.next_page_number}}">다음</a>
+                    <a href="?page={{posts.paginator.num_pages}}">마지막</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>  
+    </div>
+
+
+
+{% endblock %}
+
+</body>
+</html>
